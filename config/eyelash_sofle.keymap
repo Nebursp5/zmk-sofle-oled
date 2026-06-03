@@ -76,7 +76,8 @@
         layer0 {
             bindings = <
 &kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
+// Test: Q -> A
+&kp TAB     &kp A      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
 // Adding Home Row Mods:
 // Backup: &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp CAPS    &mt LEFT_SHIFT A      &mt RIGHT_CTRL S         &mt LEFT_ALT D         &mt LEFT_GUI F   &kp G        &kp LEFT_ARROW   &kp H      &mt RIGHT_GUI J      &mt RIGHT_ALT K      &mt RIGHT_CTRL L            &mt RIGHT_SHIFT SEMI    &kp APOS
