@@ -86,49 +86,40 @@
     keymap {
         compatible = "zmk,keymap";
 
-   /* + _Qwerty Layer0:
-      .--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
-      |        |        |        |        |        |        |                                    |        |        |        |         |        |        |
-      '--------'--------'--------'--------'--------'--------'                                    '--------'--------'--------'---------'--------'--------'
-      .--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
-      | Vim    | 1 !    | 2 @    | 3 #    | 4 $    | 5 %    |                                    | 6 ^    | 7 &    | 8 *    | 9 (     | 0 )    | F11    |
-      |        | F1     | F2     | F3     | F4     | F5     |                                    | F6     | F7     | F8     | F9      | F10    |dwmFull |
-      |--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-      |        | Q      | W      | E      | R      | T      |                                    | Y      | U      | I      | O       | P      | Del    |
-      | Conf   |        |        |        |        |        |                                    |        |        |        |         |        |dwmTiled|
-      |--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-      | Cap    | A      | S      | D      | F      | G      |                                    | H      | J      | K      | L       | ; :    | ' "    |
-      |        | Shft   | Ctrl   | Alt    | Gui    |        |                                    |        | Gui    | Alt    | Ctrl    | Shft   |dwmFloat|
-      |--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-      | ` ~    | Z      | X      | C      | V      | B      |                                    | N      | M      | , <    | . >     | / ?    | \ |    |
-      |        |        |        |        |        |        |                                    |        |        |        |         |        |dwmgap  |
-      '--------'--------+--------+--------+--------'--------'                                    '--------'--------+--------+---------+--------'--------'
-      |                 | [ {    | ] }    |.--------.--------.--------.                .--------.--------.--------.| - _    | = +     |
-      |                 |        |        || BSpc   | Spc    | Tab    |                | Esc    | Spc    | Entr   ||        |         |
-      |                 '--------'--------'| Nav    | Symb   | NumPd  |                | NumPd  | Symb   | Nav    |'--------'---------'
-      |                                    '--------'--------'--------'                '--------'--------'--------' */
-		// Querty
+   /* 
+.--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
+| Vim_5  | 1 !    | 2 @    | 3 #    | 4 $    | 5 %    |                                    | 6 ^    | 7 &    | 8 *    | 9 (     | 0 )    | F11    |
+|        | F1     | F2     | F3     | F4     | F5     |                                    | F6     | F7     | F8     | F9      | F10    |dwmFull |
+|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+|        | Q      | W      | E      | R      | T      |                                    | Y      | U      | I      | O       | P      | Del    |
+| Conf_4 |        |        |        |        |        |                                    |        |        |        |         |        |dwmTiled|
+|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+| Cap    | A      | S      | D      | F      | G      |                                    | H      | J      | K      | L       | ; :    | ' "    |
+|        | Shft   | Ctrl   | Alt    | Gui    |        |                                    |        | Gui    | Alt    | Ctrl    | Shft   |dwmFloat|
+|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+| ` ~    | Z      | X      | C      | V      | B      |                                    | N      | M      | , <    | . >     | / ?    | \ |    |
+|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmgap  |
+'--------'--------+--------+--------+--------'--------'                                    '--------'--------+--------+---------+--------'--------'
+|                 | [ {    | ] }    |.--------.--------.--------.                .--------.--------.--------.| - _    | = +     |
+|                 |        |        || BSpc   | Spc    | Tab    |                | Esc    | Spc    | Entr   ||        |         |
+|                 '--------'--------'| Nav_1  | Symb_2 | NumPd_3|                | NumPd_3| Symb_2 | Nav_1  |'--------'---------'
+|                                    '--------'--------'--------'                '--------'--------'--------' */
+// Qwerty Layer0:
         layer0 {
             bindings = <
-// Row 1:
-// Backup: &kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-// Backup2:&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp F11
-// VIM_ESC,          k1_f1,         k2_f2,         k3_f3,         k4_f4,         k5_f5,                  k6_f6,         k7_f7,         k8_f8,         k9_f9,            k0_f10,           dwm_f11_Full,
-&kp ESC     &ht F1 N1  &ht F2 N2  &ht F3 N3  &ht F4 N4  &ht F5 N5       &kp UP_ARROW     &ht F6 N6  &ht F7 N7  &ht F8 N8  &ht F9 N9  &ht F10 N0  &kp F11
-// Row 2: aun sin Layer de configuracion
-// Backup &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&mo 4     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp DELETE
-// Row 3: Adding Home Row Mods
-// Backup: &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp CAPS  &hm LSHIFT A      &hm LCTRL S       &hm LALT D      &hm LGUI F      &kp G  &kp LEFT_ARROW  &kp H  &hm RGUI J       &hm RALT K       &hm RCTRL L       &hm RSHIFT SEMI  &kp APOS
-// Row 4: Enter => backlash
-// Backup: &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp GRAVE   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp BSLH
-// Row 5 Aun sin layers:
-// Backup: &kp C_MUTE      &kp LCTRL         &kp LEFT_GUI       &kp LEFT_ALT   &mo 1      &kp SPACE    &kp ENTER          &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp BSLH
-// OJO: No funciona el LEFT_BRACKET ni el MUTE del encoder.
-// backup2: &kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp SPACE  &kp TAB      &kp ENTER          &kp ESC    &kp SPACE  &kp ENTER  &kp MINUS        &kp EQUAL
-&kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &lt 1 BACKSPACE  &lt 2 SPACE  &lt 3 TAB      &kp ENTER          &lt 3 ESC    &lt 2 SPACE  &lt 1 ENTER  &kp MINUS        &kp EQUAL
+
+/* Backup:
+&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
+&kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp BSLH
+*/
+&kp ESC     &ht F1 N1         &ht F2 N2          &ht F3 N3        &ht F4 N4    &ht F5 N5     &mmv MOVE_UP       &ht F6 N6  &ht F7 N7    &ht F8 N8    &ht F9 N9    &ht F10 N0       &kp F11
+&mo 4       &kp Q             &kp W              &kp E            &kp R        &kp T         &mmv MOVE_DOWN     &kp Y      &kp U        &kp I        &kp O        &kp P            &kp DELETE
+&kp CAPS    &hm LSHIFT A      &hm LCTRL S        &hm LALT D       &hm LGUI F   &kp G         &mmv MOVE_LEFT     &kp H      &hm RGUI J   &hm RALT K   &hm RCTRL L  &hm RSHIFT SEMI  &kp APOS
+&kp GRAVE   &kp Z             &kp X              &kp C            &kp V        &kp B         &mmv MOVE_RIGHT    &kp N      &kp M        &kp COMMA    &kp DOT      &kp FSLH         &kp BSLH
+&kp C_MUTE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &lt 1 BACKSPACE  &lt 2 SPACE  &lt 3 TAB     &mkp LCLK          &lt 3 ESC  &lt 2 SPACE  &lt 1 ENTER  &kp MINUS    &kp EQUAL
             >;
 
 // Changing Scroll to Volume.
@@ -137,35 +128,55 @@
             display-name = "L0";
         };
 
-   /* + _Navegation Layer1: Apps Navigation / dwm (verde)
-      .-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
-      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
-      '-----------'-----------'-----------'-----------'-----------'-----------'                          '-----------'-----------'-----------'-----------'-----------'-----------'
-      .-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
-      | Qwerty    | DWM Tab1  | DWM Tab2  | DWM Tab3  | DWM Tab4  | DWM Tab5  |                          | DWM Tab6  | DWM Tab7  | DWM Tab8  | DWM Tab9  | DWM LstTab| DwmNxtScn |
-      |           |           |           |           |           |           |                          |           |           |           |           | Gui-Tab   | Gui-,     |
-      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-      | WBrwsr Bck| Alt-F4    | MouseWh < | Mouse Up  | MouseWh Up| Cut       |                          | DWM PrevAp| Home      | Up        | PgUp      | Ctrl-PgUp | DwmPrvScn |
-      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
-      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-      | WBrwsr Fwd| Ctrl-f4   | Mouse <   | Mouse B3  | Mouse >   | Copy      |                          | DWM SwAppl| Left      | Paste     | Right     | Ctrl-Tab  | Alt-Tab   |
-      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
-      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-      |           | Dwm KillAp| MouseWh > | Mouse Dn  | MouseWh Dn| Menu      |                          | DWM NxtApp| END       | Down      | PgDn      | Ctrl-PgDn |           |
-      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
-      '-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
-      |                       | Mouse B2  | Mouse B1  |.-----------.-----------.--------.      .--------.-----------.-----------.| Ins       | Del       |
-      |                       |           |           || Mouse B2  | Mouse B1  | Tab    |      | ESC    | Mouse B1  | Mouse B2  ||           |           |
-      |                       '-----------'-----------'|           |           |        |      |        |           |           |'-----------'-----------'
-      |                                                '-----------'-----------'--------'      '--------'-----------'-----------' */
-		  // Apps Navigation / DWM (verde)
+/* + _Navegation Layer1: Apps Navigation / dwm (verde)
+.-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
+| Qwerty    | DWM Tab1  | DWM Tab2  | DWM Tab3  | DWM Tab4  | DWM Tab5  |                          | DWM Tab6  | DWM Tab7  | DWM Tab8  | DWM Tab9  | DWM LstTab| DwmNxtScn |
+|           |           |           |           |           |           |                          |           |           |           |           | Gui-Tab   | Gui-,     |
+|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+| WBrwsr Bck| Alt-F4    | MouseWh < | Mouse Up  | MouseWh Up| Cut       |                          | DWM PrevAp| Home      | Up        | PgUp      | Ctrl-PgUp | DwmPrvScn |
+|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+| WBrwsr Fwd| Ctrl-f4   | Mouse <   | Mouse B3  | Mouse >   | Copy      |                          | DWM SwAppl| Left      | Paste     | Right     | Ctrl-Tab  | Alt-Tab   |
+|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+|           | Dwm KillAp| MouseWh > | Mouse Dn  | MouseWh Dn| Menu      |                          | DWM NxtApp| END       | Down      | PgDn      | Ctrl-PgDn |           |
+|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+'-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
+|                       | Mouse B2  | Mouse B1  |.-----------.-----------.--------.      .--------.-----------.-----------.| Ins       | Del       |
+|                       |           |           || Mouse B2  | Mouse B1  | Tab    |      | ESC    | Mouse B1  | Mouse B2  ||           |           |
+|                       '-----------'-----------'|           |           |        |      |        |           |           |'-----------'-----------'
+|                                                '-----------'-----------'--------'      '--------'-----------'-----------' 
+[_Nav] = LAYOUT_nebur(
+TO(_Qwerty),   LGUI(KC_1),       LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5),                           LGUI(KC_6),    LGUI(KC_7),    LGUI(KC_8),    LGUI(KC_9),    LGUI(KC_TAB),  LGUI(KC_COMM),
+KC_WBAK,       LALT(KC_F4),      KC_WH_L,    KC_MS_U,    KC_WH_U,    LSFT(KC_DEL),                         LGUI(KC_K),    KC_HOME,       KC_UP,         KC_PGUP,       RCTL(KC_PGUP), LGUI(KC_DOT),
+KC_WFWD,       RCTL(KC_F4),      KC_MS_L,    KC_BTN3,    KC_MS_R,    RCTL(KC_INS),                         LGUI(KC_ENT),  KC_LEFT,       LSFT(KC_INS),  KC_RGHT,       RCTL(KC_TAB),  LALT(KC_TAB),
+_______,       LGUI(LSFT(KC_C)), KC_WH_R,    KC_MS_D,    KC_WH_D,    KC_APP,                               LGUI(KC_J),    KC_END,        KC_DOWN,       KC_PGDN,       RCTL(KC_PGDN), _______
+,                                KC_BTN2,    KC_BTN1,                                                                                    KC_INS,        KC_DEL
+,                                                        KC_BTN2,    KC_BTN1,      KC_TAB,        KC_ESC,  KC_BTN1,       KC_BTN2)*/
+// Apps Navigation / DWM (verde)
         layer_1 {
             bindings = <
+/* Backup:
 &kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+            &kp C_MUTE       &trans          &trans           &trans           &trans             &trans           &mkp LCLK        &trans           &trans      &trans     &trans            &trans
+
+&kp LC(C)       // Ctrl+C
+&kp LC(V)       // Ctrl+V
+&kp LG(R)       // Win+R
+&kp LS(TAB)     // Shift+Tab
+&kp LA(TAB)     // Alt+Tab
+&kp LC(LA(DEL))     // Ctrl+Alt+Delete
+&kp LG(LS(S))       // Win+Shift+S
+*/
+// Configuracion L1 Row 1
+&kp GRAVE        &kp LG(N1)       &kp LG(N2)      &kp LG(N3)       &kp LG(N4)       &kp LG(N5)         &mmv MOVE_UP        &kp LG(N6)       &kp LG(N7)   &kp LG(N8)   &kp LG(N9)   &kp LG(TAB)      &kp LG(COMMA)
+&kp C_AC_BACK    &kp LA(F4)       &trans          &mmv MOVE_UP     &trans           &mkp MB4           &mmv MOVE_DOWN      &hm LGUI K       &kp HOME     &kp UP       &kp PG_UP    &hm LCTRL PG_UP  &hm LGUI DOT
+&kp C_AC_FORWARD &kp RC(F4)       &mmv MOVE_LEFT  &trans           &mmv MOVE_RIGHT  &mkp MB5           &mmv MOVE_LEFT      &hm LGUI ENTER   &kp LEFT     &trans       &kp RIGHT    &hm LCTRL RIGHT  &kp LA(TAB)
+&trans           &kp LG(LS(C))    &trans          &mmv MOVE_DOWN   &trans           &trans             &mmv MOVE_RIGHT     &hm LGUI J       &kp END      &kp DOWN     &kp PG_DN    &hm LCTRL PG_DN  &trans
+                 &kp C_MUTE       &mkp RCLK       &mkp RCLK        &mkp LCLK        TAB                &trans              &mkp LCLK        &trans       &trans       &trans       &trans           &trans
             >;
 
             display-name = "L1";
