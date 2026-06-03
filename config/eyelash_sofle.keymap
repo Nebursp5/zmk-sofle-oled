@@ -95,7 +95,7 @@
 &kp CAPS  &hm LSHIFT A      &hm LCTRL S       &hm LALT D      &hm LGUI F      &kp G  &kp LEFT_ARROW  &kp H  &hm RGUI J       &hm RALT K       &hm RCTRL L       &hm RSHIFT SEMI  &kp APOS
 // Row 4: Enter => backlash
 // Backup: &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp TILDE   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp BSLH
+&kp GRAVE   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp BSLH
 // Row 5 Aun sin layers:
 // Backup: &kp C_MUTE      &kp LCTRL         &kp LEFT_GUI       &kp LEFT_ALT   &mo 1      &kp SPACE    &kp ENTER          &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp BSLH
 // OJO: No funciona el LEFT_BRACKET ni el MUTE del encoder.
