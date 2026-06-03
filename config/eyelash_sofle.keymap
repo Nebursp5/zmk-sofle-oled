@@ -82,6 +82,7 @@
       |                 |        |        || BSpc   | Spc    | Tab    |                | Esc    | Spc    | Entr   ||        |         |
       |                 '--------'--------'| Nav    | Symb   | NumPd  |                | NumPd  | Symb   | Nav    |'--------'---------'
       |                                    '--------'--------'--------'                '--------'--------'--------' */
+		// Querty
         layer0 {
             bindings = <
 // Row 1:
@@ -89,7 +90,7 @@
 &kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp F11
 // Row 2: aun sin Layer de configuracion
 // Backup &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp DELETE
+&mo 4     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp DELETE
 // Row 3: Adding Home Row Mods
 // Backup: &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp CAPS  &hm LSHIFT A      &hm LCTRL S       &hm LALT D      &hm LGUI F      &kp G  &kp LEFT_ARROW  &kp H  &hm RGUI J       &hm RALT K       &hm RCTRL L       &hm RSHIFT SEMI  &kp APOS
@@ -99,7 +100,8 @@
 // Row 5 Aun sin layers:
 // Backup: &kp C_MUTE      &kp LCTRL         &kp LEFT_GUI       &kp LEFT_ALT   &mo 1      &kp SPACE    &kp ENTER          &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp BSLH
 // OJO: No funciona el LEFT_BRACKET ni el MUTE del encoder.
-&kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp SPACE  &kp TAB      &kp ENTER          &kp ESC    &kp SPACE  &kp ENTER  &kp MINUS        &kp EQUAL
+// backup2: &kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp SPACE  &kp TAB      &kp ENTER          &kp ESC    &kp SPACE  &kp ENTER  &kp MINUS        &kp EQUAL
+&kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &lt 1 BACKSPACE  &lt 2 SPACE  &lt 3 TAB      &kp ENTER          &lt 3 ESC    &lt 2 SPACE  &lt 1 ENTER  &kp MINUS        &kp EQUAL
             >;
 
 // Changing Scroll to Volume.
@@ -108,6 +110,28 @@
             display-name = "L0";
         };
 
+   /* + _Navegation Layer1: Apps Navigation / dwm (verde)
+      .-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
+      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
+      '-----------'-----------'-----------'-----------'-----------'-----------'                          '-----------'-----------'-----------'-----------'-----------'-----------'
+      .-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
+      | Qwerty    | DWM Tab1  | DWM Tab2  | DWM Tab3  | DWM Tab4  | DWM Tab5  |                          | DWM Tab6  | DWM Tab7  | DWM Tab8  | DWM Tab9  | DWM LstTab| DwmNxtScn |
+      |           |           |           |           |           |           |                          |           |           |           |           | Gui-Tab   | Gui-,     |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+      | WBrwsr Bck| Alt-F4    | MouseWh < | Mouse Up  | MouseWh Up| Cut       |                          | DWM PrevAp| Home      | Up        | PgUp      | Ctrl-PgUp | DwmPrvScn |
+      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+      | WBrwsr Fwd| Ctrl-f4   | Mouse <   | Mouse B3  | Mouse >   | Copy      |                          | DWM SwAppl| Left      | Paste     | Right     | Ctrl-Tab  | Alt-Tab   |
+      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+      |           | Dwm KillAp| MouseWh > | Mouse Dn  | MouseWh Dn| Menu      |                          | DWM NxtApp| END       | Down      | PgDn      | Ctrl-PgDn |           |
+      |           |           |           |           |           |           |                          |           |           |           |           |           |           |
+      '-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
+      |                       | Mouse B2  | Mouse B1  |.-----------.-----------.--------.      .--------.-----------.-----------.| Ins       | Del       |
+      |                       |           |           || Mouse B2  | Mouse B1  | Tab    |      | ESC    | Mouse B1  | Mouse B2  ||           |           |
+      |                       '-----------'-----------'|           |           |        |      |        |           |           |'-----------'-----------'
+      |                                                '-----------'-----------'--------'      '--------'-----------'-----------' */
+		  // Apps Navigation / DWM (verde)
         layer_1 {
             bindings = <
 &kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
@@ -122,6 +146,29 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+
+   /* + _Symb Layer2: Simbolos / Tmux: (rojo)
+      .-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
+      |       |        |        |        |        |        |                               |        |        |        |        |        |        |
+      '-------'--------'--------'--------'--------'--------'                               '--------'--------'--------'--------'--------'--------'
+      .-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
+      | Qwer  | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom|
+      |       |        |        |        |        |        |                               |        |        |        |        |        |        |
+      |-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+      |       |        |        |  é     |        |        |                               |        |   ú    | í      | ó      |TmuxPrev|TmuxLstPne|
+      |       |        |        |        |        |        |                               |        |        |        |        |        |        |
+      |-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+      | á     |  !     |  @     |  #     | $      | %      |                               | ^      |   &    | *      | (      | )      | "      |
+      |       |        |        |        |        |        |                               |        |        |        |        |        |        |
+      |-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+      | ~     |        |        |        |        |        |                               | ñ      |        |        |        |TmuxNext| |      |
+      |       |        |        |        |        |        |                               |        |        |        |        |        |        |
+      '-------'--------+--------+--------+--------'--------'                               '--------'--------+--------+--------+--------'--------'
+      |                |  {     |  }     |.--------.--------.--------.           .--------.--------.--------.| _      | +      |
+      |                |        |        || Bspc   | Spc    | Tab    |           | Esc    | Spc    | Entr   ||        |        |
+      |                '--------'--------'|        |        |        |           |        |        |        |'--------'--------'
+      |                                   '--------'--------'--------'           '--------'--------'--------' */
+   // Layer2 Simbolos
         layer_2 {
             bindings = <
 &kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
@@ -135,6 +182,29 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+
+   /* + Layer: Appl Shortcuts Vim / Numeric Pad (celeste)
+      .----------.----------.----------.----------.----------.----------.                           .----------.----------.----------.----------.----------.----------.
+      |          |          |          |          |          |          |                           |          |          |          |          |          |          |
+      '----------'----------'----------'----------'----------'----------'                           '----------'----------'----------'----------'----------'----------'
+      .----------.----------.----------.----------.----------.----------.                           .----------.----------.----------.----------.----------.----------.
+      | Querty   | VimBuf1  | VimBuf2  | VimBuf3  | VimBuf4  | VimBuf5  |                           | VimBuf6  | VimBuf7  | VimBuf8  | VimBuf9  | VimListBf| Spk VolUp|
+      |          |          |          |          |          |          |                           |          |          |          |          | <c-l>    |          |
+      |----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+      | ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     | 7        | 8        | 9        | VimPrev  | Spk VolDn|
+      | ExpandTab| Esc :q!  | Esc :up  |          |          |          |                           |          |          |          |          |          |          |
+      |----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+      |ReadlineVi|          |          |          | Offi Vim | Offi WBrw|                           | ViList   | 4        | 5        | 6        | ViCln    | Spk Mute |
+      |Screenrc  |          |          |          |          |          |                           | :set list|          |          |          | Esc :    |          |
+      |----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+      | SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    | 1        | 2        | 3        | VimNext  | Mic Mute |
+      | set -o vi|          | Esc :x!  |          |          |          |                           | Esc :noh |          |          |          |          |          |
+      '----------'----------+----------+----------+----------'----------'                           '----------'----------+----------+----------+----------'----------'
+      |                     | [ {      | ] }      |.----------.----------.---------.     .---------.----------.----------.| 0        | .        |
+      |                     |          |          || BSpc     | Spc      | Tab     |     | Esc     | Spc      | Enter    ||          |          |
+      |                     '----------'----------'|          |          |         |     |         |          |          |'----------'----------'
+      |                                            '----------'----------'---------'     '---------'----------'----------' */
+		// Layer3 NumPad vim
         layer_3 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -148,6 +218,30 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+
+   /* + Configuration Layer:
+      -----------.-----------.-----------.-----------.-----------.-----------.                                  .-----------.-----------.-----------.-----------.-----------.-----------.
+      |           |           |           |           |           |           |                                  |           |           |           |           |           |           |
+      '-----------'-----------'-----------'-----------'-----------'-----------'                                  '-----------'-----------'-----------'-----------'-----------'-----------'
+      .-----------.-----------.-----------.-----------.-----------.-----------.                                  .-----------.-----------.-----------.-----------.-----------.-----------.
+      |           | Sleep     | ScrLock   | Key Reset | Moni BrDn | Moni BrUp |                                  |           |           |           |           |           | BT Mngr   |
+      |           |           |           |           |           |           |                                  |           |           |           |           |           |           |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |           |           |           | Note BrDn | Note BrUp |                                  |           |           | Vid Player|           | Print Scr | NMEditor  |
+      |           |           |           |           |           |           |                                  |           |           |           |           |           |           |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+      | RloadHkey |           | RgbSAI    |           | RgbMod    | RgbTogle  |                                  |           | Media Prv | Play/Pause| Media Nxt | Print Wind| guvcview  |
+      |           |           |           |           |           |           |                                  |           |           |           |           |           |           |
+      |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |           |           | RgbHUI    | RgbVAI    | RgbKnight |                                  |           |           | Aud Player|           |           | Audio Ctrl|
+      |           |           |           |           |           |           |                                  |           |           |           |           |           |           |
+      '-----------'-----------+-----------+-----------+-----------'-----------'                                  '-----------'-----------+-----------+-----------+-----------'-----------'
+      |                       |           |           |.------------------------------------.      .------------.-----------------------.| Windows   | Linux     | Windows/Linux Mode, para cambiar el set de linux a windows.
+      |                       |           |           || Nav       | Symb      | NumPad     |      | NumPad     | Symb      | Nav       ||           |           |
+      |                       '-----------'-----------'|           |           |            |      |            |           |           |'-----------'-----------'
+      |                                                '-----------'-----------'------------'      '------------'-----------'-----------'
+      */
+	//   [_Conf] = LAYOUT_nebur(
         layer_4 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
