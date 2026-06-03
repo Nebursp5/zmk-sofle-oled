@@ -84,17 +84,22 @@
       |                                    '--------'--------'--------'                '--------'--------'--------' */
         layer0 {
             bindings = <
-&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
-// Adding Home Row Mods:
-	// Backup: &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-  &kp CAPS  &hm LSHIFT A      &hm LCTRL S       &hm LALT D      &hm LGUI F      &kp G  &kp LEFT_ARROW  &kp H  &hm RGUI J       &hm RALT K       &hm RCTRL L       &hm RSHIFT SEMI		 &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-// Changing Last Row Aun sin layers:
-	// Backup: &kp C_MUTE      &kp LCTRL         &kp LEFT_GUI       &kp LEFT_ALT   &mo 1      &kp SPACE    &kp ENTER          &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
-	// OJO: No funciona el LEFT_BRACKET ni el MUTE del encoder.
-           &kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp SPACE  &kp TAB      &kp ENTER          &kp ESC    &kp SPACE  &kp ENTER  &kp MINUS        &kp EQUAL
-
+// Row 1:
+// Backup: &kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp ESC     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp F11
+// Row 2: aun sin Layer de configuracion
+// Backup &kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp BSLH
+&kp TAB     &kp Q      &kp W         &kp E         &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp DELETE
+// Row 3: Adding Home Row Mods
+// Backup: &kp CAPS    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp CAPS  &hm LSHIFT A      &hm LCTRL S       &hm LALT D      &hm LGUI F      &kp G  &kp LEFT_ARROW  &kp H  &hm RGUI J       &hm RALT K       &hm RCTRL L       &hm RSHIFT SEMI  &kp APOS
+// Row 4: Enter => backlash
+// Backup: &kp LSHFT   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
+&kp TILDE   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp BSLH
+// Row 5 Aun sin layers:
+// Backup: &kp C_MUTE      &kp LCTRL         &kp LEFT_GUI       &kp LEFT_ALT   &mo 1      &kp SPACE    &kp ENTER          &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp BSLH
+// OJO: No funciona el LEFT_BRACKET ni el MUTE del encoder.
+&kp C_MUTE      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp SPACE  &kp TAB      &kp ENTER          &kp ESC    &kp SPACE  &kp ENTER  &kp MINUS        &kp EQUAL
             >;
 
 // Changing Scroll to Volume.
