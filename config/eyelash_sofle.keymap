@@ -158,7 +158,7 @@ Backup:
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-            &kp C_MUTE       &trans          &trans           &trans           &trans             &trans           &mkp LCLK        &trans           &trans      &trans     &trans            &trans
+&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
 &kp LC(C)       // Ctrl+C
 &kp LC(V)       // Ctrl+V
 &kp LG(R)       // Win+R
@@ -170,11 +170,11 @@ Backup:
 // Configuracion L1 Row 1
         layer_1 {
             bindings = <
-&kp GRAVE        &kp LG(N1)       &kp LG(N2)      &kp LG(N3)       &kp LG(N4)       &kp LG(N5)         &mmv MOVE_UP        &kp LG(N6)       &kp LG(N7)   &kp LG(N8)   &kp LG(N9)   &kp LG(TAB)      &kp LG(COMMA)
-&kp C_AC_BACK    &kp LA(F4)       &trans          &mmv MOVE_UP     &trans           &mkp MB4           &mmv MOVE_DOWN      &hm LGUI K       &kp HOME     &kp UP       &kp PG_UP    &hm LCTRL PG_UP  &hm LGUI DOT
-&kp C_AC_FORWARD &kp RC(F4)       &mmv MOVE_LEFT  &trans           &mmv MOVE_RIGHT  &mkp MB5           &mmv MOVE_LEFT      &hm LGUI ENTER   &kp LEFT     &trans       &kp RIGHT    &hm LCTRL RIGHT  &kp LA(TAB)
-&trans           &kp LG(LS(C))    &trans          &mmv MOVE_DOWN   &trans           &trans             &mmv MOVE_RIGHT     &hm LGUI J       &kp END      &kp DOWN     &kp PG_DN    &hm LCTRL PG_DN  &trans
-                 &kp C_MUTE       &mkp RCLK       &mkp RCLK        &mkp LCLK        &kp TAB           &trans              &mkp LCLK        &trans       &trans       &trans       &trans           &trans
+&kp GRAVE        &kp LG(N1)      &kp LG(N2)      &kp LG(N3)       &kp LG(N4)       &kp LG(N5)         &mmv MOVE_UP      &kp LG(N6)        &kp LG(N7)   &kp LG(N8)   &kp LG(N9)   &kp LG(TAB)      &kp LG(COMMA)
+&kp C_AC_BACK    &kp LA(F4)      &trans          &mmv MOVE_UP     &trans           &mkp MB4           &mmv MOVE_DOWN    &hm LGUI K        &kp HOME     &kp UP       &kp PG_UP    &hm LCTRL PG_UP  &hm LGUI DOT
+&kp C_AC_FORWARD &kp RC(F4)      &mmv MOVE_LEFT  &mkp MCLK        &mmv MOVE_RIGHT  &mkp MB5           &mmv MOVE_LEFT    &hm LGUI ENTER    &kp LEFT     &trans       &kp RIGHT    &hm LCTRL RIGHT  &kp LA(TAB)
+&trans           &kp LG(LS(C))   &trans          &mmv MOVE_DOWN   &trans           &trans             &mmv MOVE_RIGHT   &hm LGUI J        &kp END      &kp DOWN     &kp PG_DN    &hm LCTRL PG_DN  &trans
+&kp C_MUTE       &mkp RCLK       &mkp RCLK       &mkp LCLK        &kp TAB          &trans             &mkp LCLK         &trans            &trans       &trans       &trans       &trans
             >;
 
             display-name = "L1";
