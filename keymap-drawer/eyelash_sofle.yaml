@@ -57,11 +57,11 @@ layers:
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - {t: '$$mdi:backspace$$', h: NAVE}
-  - {t: '$$mdi:keyboard-space$$', h: SIMB}
+  - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - {t: '$$mdi:keyboard-tab$$', h: NUMB}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:keyboard-esc$$', h: NUMB}
-  - {t: '$$mdi:keyboard-space$$', h: SIMB}
+  - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - {t: '$$mdi:keyboard-return$$', h: NAVE}
   - {t: '-', s: _}
   - {t: '=', s: +}
@@ -130,7 +130,7 @@ layers:
   - {t: '$$mdi:mouse-right-click-outline$$', type: held alternate}
   - Ins
   - $$mdi:backspace-reverse-outline$$
-  SIMB:
+  SYMB:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -169,7 +169,7 @@ layers:
   - {t: Sft+8, s: Sft+*}
   - {t: Sft+9, s: Sft+(}
   - {t: Sft+0, s: Sft+)}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '"'
   - '~'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -182,7 +182,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '|'
   - {t: '$$mdi:transfer$$', type: trans}
   - '{'
   - '}'
@@ -208,7 +208,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-high$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -221,7 +221,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-low$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -234,7 +234,7 @@ layers:
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -247,7 +247,7 @@ layers:
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F20
   - {t: '$$mdi:transfer$$', type: trans}
   - '{'
   - '}'
