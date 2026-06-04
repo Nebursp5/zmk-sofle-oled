@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
-  L0:
+  0Que:
   - $$mdi:keyboard-esc$$
   - {t: '1', h: F1, s: '!'}
   - {t: '2', h: F2, s: '@'}
@@ -14,7 +14,7 @@ layers:
   - {t: '9', h: F9, s: (}
   - {t: '0', h: F10, s: )}
   - F11
-  - L4
+  - 4Set
   - Q
   - W
   - E
@@ -56,16 +56,16 @@ layers:
   - $$mdi:volume-off$$
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - {t: '$$mdi:backspace$$', h: L1}
-  - {t: '$$mdi:keyboard-space$$', h: L2}
-  - {t: '$$mdi:keyboard-tab$$', h: L3}
+  - {t: '$$mdi:backspace$$', h: 1Nav}
+  - {t: '$$mdi:keyboard-space$$', h: 2Sim}
+  - {t: '$$mdi:keyboard-tab$$', h: 3Num}
   - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:keyboard-esc$$', h: L3}
-  - {t: '$$mdi:keyboard-space$$', h: L2}
-  - {t: '$$mdi:keyboard-return$$', h: L1}
+  - {t: '$$mdi:keyboard-esc$$', h: 3Num}
+  - {t: '$$mdi:keyboard-space$$', h: 2Sim}
+  - {t: '$$mdi:keyboard-return$$', h: 1Nav}
   - {t: '-', s: _}
   - {t: '=', s: +}
-  L1:
+  1Nav:
   - {t: '`', s: '~'}
   - {t: Gui+1, s: Gui+!}
   - {t: Gui+2, s: Gui+@}
@@ -130,7 +130,7 @@ layers:
   - {t: '$$mdi:mouse-right-click-outline$$', type: held alternate}
   - Ins
   - $$mdi:backspace-reverse-outline$$
-  L2:
+  2Sim:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -195,7 +195,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - _
   - +
-  L3:
+  3Num:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -260,7 +260,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '0', s: )}
   - {t: ., s: '>'}
-  L4:
+  4Set:
   - {t: '$$mdi:transfer$$', type: trans}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
