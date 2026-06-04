@@ -10,62 +10,62 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
+// Para poner una tecla en la configuracion que no toma ninguna accion.
+# define ___ none
+
 // Mouse:
 // Velocidad:
 //#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 //#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
-
-
-
-# define ___ none   // No hace absolutamente nada
-
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
 &msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
+	acceleration-exponent = <1>;      // 0
+	time-to-max-speed-ms = <100>;       // 300
+	delay-ms = <0>;                   // 0
 };
-
 &mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
+	time-to-max-speed-ms = <500>;
+	acceleration-exponent = <1>;
+	trigger-period-ms = <16>;
 };
 
+// Tiempo que debe mantenerse apreteada la tecla de soft_off para que apague el teclado: 2seg.
 &soft_off { hold-time-ms = <2000>; };
 
+
 / {
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-        tap-ms = <100>;
-    };
+	scroll_encoder: scroll_encoder {
+		compatible = "zmk,behavior-sensor-rotate";
+		#sensor-binding-cells = <0>;
+		bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+		tap-ms = <100>;
+	};
 
-	 behaviors {
-		// https://zmk.dev/docs/keymaps/behaviors/hold-tap
-      lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Layer-Tap";
-      };
+	behaviors {
+	// https://zmk.dev/docs/keymaps/behaviors/hold-tap
+
+		lt: layer_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&mo>, <&kp>;
+			display-name = "Layer-Tap";
+		};
+
 		hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-      };
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;
+			quick-tap-ms = <0>;
+			flavor = "balanced";
+			bindings = <&kp>, <&kp>;
+		};
+
 		mt: mod_tap {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -74,358 +74,314 @@
 			bindings = <&kp>, <&kp>;
 			display-name = "Mod-Tap";
 		};
+
 		// hold and Tap (between Normal keys)
-      ht: Hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&kp>, <&kp>;
-      };
+		ht: Hold_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&kp>, <&kp>;
+		};
 
-	 };
+	};
 
-    combos {
-        compatible = "zmk,combos";
+	macros {
+		enie: enie {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp F>,
+				<&macro_tap &kp N1>,
+				<&macro_tap &kp ENTER>;
+		};
 
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <14 28 40>;
-        };
-    };
+		a_a: a_a {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp E>,
+				<&macro_tap &kp N1>,
+				<&macro_tap &kp ENTER>;
+		};
 
-    macros {
-	  enie: enie {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp F>,
-            <&macro_tap &kp N1>,
-            <&macro_tap &kp ENTER>;
-	  };
-/* 
-ñ = 00F1
-á = 00E1
-é = 00E9
-í = 00ED
-ó = 00F3
-ú = 00FA
-*/
+		e_a: e_a {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp E>,
+				<&macro_tap &kp N9>,
+				<&macro_tap &kp ENTER>;
+		};
 
-	  a_a: a_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp E>,
-            <&macro_tap &kp N1>,
-            <&macro_tap &kp ENTER>;
-	  };
+		i_a: i_a {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp E>,
+				<&macro_tap &kp D>,
+				<&macro_tap &kp ENTER>;
+		};
 
-	  e_a: e_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp E>,
-            <&macro_tap &kp N9>,
-            <&macro_tap &kp ENTER>;
-	  };
+		o_a: o_a {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp F>,
+				<&macro_tap &kp N3>,
+				<&macro_tap &kp ENTER>;
+		};
 
-	  i_a: i_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp E>,
-            <&macro_tap &kp D>,
-            <&macro_tap &kp ENTER>;
-	  };
-
-	  o_a: o_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp F>,
-            <&macro_tap &kp N3>,
-            <&macro_tap &kp ENTER>;
-	  };
-
-	  u_a: u_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LCTRL>,
-            <&macro_press &kp LSHFT>,
-            <&macro_tap &kp U>,
-            <&macro_release &kp LSHFT>,
-            <&macro_release &kp LCTRL>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp N0>,
-            <&macro_tap &kp F>,
-            <&macro_tap &kp A>,
-            <&macro_tap &kp ENTER>;
-	  };
-
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-   /* Pendientes Layer0:
-.--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
-| Vim_5  |        |        |        |        |        |                                    |        |        |        |         |        | F11    |
-|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFull |
-|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-|        |        |        |        |        |        |                                    |        |        |        |         |        | Del    |
-|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmTiled|
-|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-|        |        |        |        |        |        |                                    |        |        |        |         |        | ' "    |
-|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFloat|
-|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-|        |        |        |        |        |        |                                    |        |        |        |         |        | \ |    |
-|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmgap  |
-'--------'--------+--------+--------+--------'--------'                                    '--------'--------+--------+---------+--------'--------'
-|                 |        |        |.--------.--------.--------.                .--------.--------.--------.|        |         |
-|                 |        |        ||        |        |        |                |        |        |        ||        |         |
-|                 '--------'--------'|        |        |        |                |        |        |        |'--------'---------'
-|                                    '--------'--------'--------'                '--------'--------'--------' */
-// Qwerty Layer0:
-        layer0 {
-            bindings = <
+		u_a: u_a {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <10>;
+			tap-ms = <10>;
+			bindings =
+				<&macro_press &kp LCTRL>,
+				<&macro_press &kp LSHFT>,
+				<&macro_tap &kp U>,
+				<&macro_release &kp LSHFT>,
+				<&macro_release &kp LCTRL>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp N0>,
+				<&macro_tap &kp F>,
+				<&macro_tap &kp A>,
+				<&macro_tap &kp ENTER>;
+		};
+	};
 
 
+	keymap {
+		compatible = "zmk,keymap";
+
+		// Qwerty Layer0:
+		layer0 {
+			bindings = <
+			/* Pendientes Layer0:
+			.--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
+			| Vim_5  |        |        |        |        |        |                                    |        |        |        |         |        | F11    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFull |
+			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+			|        |        |        |        |        |        |                                    |        |        |        |         |        | Del    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmTiled|
+			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+			|        |        |        |        |        |        |                                    |        |        |        |         |        | ' "    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFloat|
+			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
+			|        |        |        |        |        |        |                                    |        |        |        |         |        | \ |    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmgap  |
+			'--------'--------+--------+--------+--------'--------'                                    '--------'--------+--------+---------+--------'--------'
+			|                 |        |        |.--------.--------.--------.                .--------.--------.--------.|        |         |
+			|                 |        |        ||        |        |        |                |        |        |        ||        |         |
+			|                 '--------'--------'|        |        |        |                |        |        |        |'--------'---------'
+			|                                    '--------'--------'--------'                '--------'--------'--------' */
+			// ╭─────────┬────────────┬────────────────┬─────────────────┬───────────────┬───────────╮             ╭───────────────╮       ╭───────────┬───────────┬──────────┬───────────┬───────────────┬──────────╮
+				 &___      &ht F1 N1    &ht F2 N2        &ht F3 N3         &ht F4 N4       &ht F5 N5                 &msc SCRL_UP            &ht F6 N6   &ht F7 N7   &ht F8 N8  &ht F9 N9   &ht F10 N0      &kp F11
+			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
+				 &mo 4     &kp Q        &kp W            &kp E             &kp R           &kp T                     &msc SCRL_DOWN          &kp Y       &kp U       &kp I      &kp O       &kp P           &kp DELETE
+			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
+				 &kp CAPS  &hm LSHIFT A &hm LCTRL S      &hm LALT D        &hm LGUI F      &kp G                     &msc SCRL_LEFT          &kp H       &hm RGUI J  &hm RALT K &hm RCTRL L &hm RSHIFT SEMI &kp APOS
+			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
+				 &kp GRAVE &kp Z        &kp X            &kp C             &kp V           &kp B                     &msc SCRL_RIGHT         &kp N       &kp M       &kp COMMA  &kp DOT     &kp FSLH        &kp BSLH
+			// ╰┬────────┴─┬──────────┼────────────────┼─────────────────┼───────────────┼───────────┼─────────╮   ┼──────────╮╭───────────┼───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┼
+				  &kp C_MUTE            &kp LEFT_BRACKET &kp RIGHT_BRACKET &lt 1 BACKSPACE &lt 2 SPACE &lt 3 TAB     &mkp LCLK    &lt 3 ESC  &lt 2 SPACE &lt 1 ENTER &kp MINUS  &kp EQUAL
+			//  ╰──────────╯          ╰────────────────┴─────────────────┴───────────────┴───────────┴─────────╯   ╰──────────╯╰───────────┴───────────┴───────────┴──────────┴───────────╯
+			//  ENCODER PRESS                                                                                       HAT PRESS
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+			//display-name = "L0";
+			display-name = "BASE";
+		};
 
 
-// ╭─────────┬────────────┬────────────────┬─────────────────┬───────────────┬───────────╮             ╭───────────────╮       ╭───────────┬───────────┬──────────┬───────────┬───────────────┬──────────╮
-    &___      &ht F1 N1    &ht F2 N2        &ht F3 N3         &ht F4 N4       &ht F5 N5                 &msc SCRL_UP            &ht F6 N6   &ht F7 N7   &ht F8 N8  &ht F9 N9   &ht F10 N0      &kp F11
-// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
-    &mo 4     &kp Q        &kp W            &kp E             &kp R           &kp T                     &msc SCRL_DOWN          &kp Y       &kp U       &kp I      &kp O       &kp P           &kp DELETE
-// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
-    &kp CAPS  &hm LSHIFT A &hm LCTRL S      &hm LALT D        &hm LGUI F      &kp G                     &msc SCRL_LEFT          &kp H       &hm RGUI J  &hm RALT K &hm RCTRL L &hm RSHIFT SEMI &kp APOS
-// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┤
-    &kp GRAVE &kp Z        &kp X            &kp C             &kp V           &kp B                     &msc SCRL_RIGHT         &kp N       &kp M       &kp COMMA  &kp DOT     &kp FSLH        &kp BSLH
-// ╰┬────────┴─┬──────────┼────────────────┼─────────────────┼───────────────┼───────────┼─────────╮   ┼──────────╮╭───────────┼───────────┼───────────┼──────────┼───────────┼───────────────┼──────────┼
-     &kp C_MUTE            &kp LEFT_BRACKET &kp RIGHT_BRACKET &lt 1 BACKSPACE &lt 2 SPACE &lt 3 TAB     &mkp LCLK    &lt 3 ESC  &lt 2 SPACE &lt 1 ENTER &kp MINUS  &kp EQUAL
-//  ╰──────────╯          ╰────────────────┴─────────────────┴───────────────┴───────────┴─────────╯   ╰──────────╯╰───────────┴───────────┴───────────┴──────────┴───────────╯
-//  ENCODER PRESS                                                                                       HAT PRESS
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            //display-name = "L0";
-            display-name = "BASE";
-        };
-
-/* + _Navegation Layer1: Apps Navigation / dwm (verde) Pendientes:
-.-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
-|           |           |           |           |           |           |                          |           |           |           |           |           |           |
-|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-|           |           |           |           |           |           |                          |           |           |           |           |           |           |
-|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-|           |           |           |           |           |           |                          |           |           |           |           |           |           |
-|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-|           |           |           |           |           | Menu      |                          |           |           |           |           |           |           |
-'-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
-|                       |           |           |.-----------.-----------.--------.      .--------.-----------.-----------.|           |           |
-|                       |           |           ||           |           |        |      |        |           |           ||           |           |
-|                       '-----------'-----------'|           |           |        |      |        |           |           |'-----------'-----------'
-|                                                '-----------'-----------'--------'      '--------'-----------'-----------'
-[_Nav] = LAYOUT_nebur(
-TO(_Qwerty),   LGUI(KC_1),       LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5),                           LGUI(KC_6),    LGUI(KC_7),    LGUI(KC_8),    LGUI(KC_9),    LGUI(KC_TAB),  LGUI(KC_COMM),
-KC_WBAK,       LALT(KC_F4),      KC_WH_L,    KC_MS_U,    KC_WH_U,    LSFT(KC_DEL),                         LGUI(KC_K),    KC_HOME,       KC_UP,         KC_PGUP,       RCTL(KC_PGUP), LGUI(KC_DOT),
-KC_WFWD,       RCTL(KC_F4),      KC_MS_L,    KC_BTN3,    KC_MS_R,    RCTL(KC_INS),                         LGUI(KC_ENT),  KC_LEFT,       LSFT(KC_INS),  KC_RGHT,       RCTL(KC_TAB),  LALT(KC_TAB),
-_______,       LGUI(LSFT(KC_C)), KC_WH_R,    KC_MS_D,    KC_WH_D,    KC_APP,                               LGUI(KC_J),    KC_END,        KC_DOWN,       KC_PGDN,       RCTL(KC_PGDN), _______
-,                                KC_BTN2,    KC_BTN1,                                                                                    KC_INS,        KC_DEL
-,                                                        KC_BTN2,    KC_BTN1,      KC_TAB,        KC_ESC,  KC_BTN1,       KC_BTN2)
-// Apps Navigation / DWM (verde)
-&kp LC(C)       // Ctrl+C
-&kp LC(V)       // Ctrl+V
-&kp LG(R)       // Win+R
-&kp LS(TAB)     // Shift+Tab
-&kp LA(TAB)     // Alt+Tab
-&kp LC(LA(DEL))     // Ctrl+Alt+Delete
-&kp LG(LS(S))       // Win+Shift+S
-*/
-// Configuracion L1 Row 1
-        layer_1 {
-            bindings = <
-// ╭────────────────┬─────────────┬───────────────┬──────────────┬───────────────┬──────────────╮              ╭───────────────╮       ╭──────────────┬─────────────┬──────────────┬─────────────┬───────────────┬─────────────╮
-    &kp GRAVE        &kp LG(N1)    &kp LG(N2)      &kp LG(N3)     &kp LG(N4)      &kp LG(N5)                    &mmv MOVE_UP            &kp LG(N6)     &kp LG(N7)    &kp LG(N8)     &kp LG(N9)    &kp LG(TAB)     &kp LG(COMMA)
-// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
-    &kp C_AC_BACK    &kp LA(F4)    &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_UP    &kp LS(DELETE)                &mmv MOVE_DOWN          &kp LG(K)      &kp HOME      &kp UP         &kp PG_UP     &kp RC(PG_UP)   &kp LG(DOT)
-// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
-    &kp C_AC_FORWARD &kp RC(F4)    &mmv MOVE_LEFT  &mkp MCLK      &mmv MOVE_RIGHT &kp RC(INSERT)                &mmv MOVE_LEFT          &kp LG(ENTER)  &kp LEFT      &kp LS(INSERT) &kp RIGHT     &kp RC(TAB)     &kp LA(TAB)
-// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
-    &___             &kp LG(LS(C)) &msc SCRL_RIGHT &mmv MOVE_DOWN &msc SCRL_DOWN  &trans                        &mmv MOVE_RIGHT         &kp LG(J)      &kp END       &kp DOWN       &kp PG_DN     &kp RC(PG_DN)   &___  
-// ╰┬─────────────┬─┴─────────────┼───────────────┼──────────────┼───────────────┼──────────────┼───────────╮  ┼──────────╮╭───┴───────┼──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────╯
-     &kp C_MUTE                    &mkp RCLK       &mkp LCLK      &mkp RCLK       &mkp LCLK      &kp TAB        &mkp LCLK   &kp ESCAPE  &mkp LCLK      &mkp RCLK        &kp INSERT     &kp DELETE
-//  ╰──────────╯                  ╰───────────────┴──────────────┴───────────────┴──────────────┴───────────╯  ╰──────────╯╰───────────┴──────────────┴─────────────┴──────────────┴─────────────╯
-//  ENCODER PRESS                                                                                              HAT PRESS
-            >;
-
-            //display-name = "L1";
-            display-name = "NAV";
-// Backup:  sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            sensor-bindings = <&scroll_encoder>;
-        };
+		// Navigation Layer1:
+		layer_1 {
+			bindings = <
+			/* + _Navegation Layer1: Apps Navigation / dwm (verde) Pendientes:
+			.-----------.-----------.-----------.-----------.-----------.-----------.                          .-----------.-----------.-----------.-----------.-----------.-----------.
+			|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+			|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+			|           |           |           |           |           |           |                          |           |           |           |           |           |           |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
+			|           |           |           |           |           | Menu KC_app|                          |           |           |           |           |           |           |
+			'-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
+			|                       |           |           |.-----------.-----------.--------.      .--------.-----------.-----------.|           |           |
+			|                       |           |           ||           |           |        |      |        |           |           ||           |           |
+			|                       '-----------'-----------'|           |           |        |      |        |           |           |'-----------'-----------'
+			|                                                '-----------'-----------'--------'      '--------'-----------'-----------' */
+			// Configuracion L1 Row 1
+			// ╭────────────────┬─────────────┬───────────────┬──────────────┬───────────────┬──────────────╮              ╭───────────────╮       ╭──────────────┬─────────────┬──────────────┬─────────────┬───────────────┬─────────────╮
+				 &kp GRAVE        &kp LG(N1)    &kp LG(N2)      &kp LG(N3)     &kp LG(N4)      &kp LG(N5)                    &mmv MOVE_UP            &kp LG(N6)     &kp LG(N7)    &kp LG(N8)     &kp LG(N9)    &kp LG(TAB)     &kp LG(COMMA)
+			// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
+				 &kp C_AC_BACK    &kp LA(F4)    &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_UP    &kp LS(DELETE)                &mmv MOVE_DOWN          &kp LG(K)      &kp HOME      &kp UP         &kp PG_UP     &kp RC(PG_UP)   &kp LG(DOT)
+			// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
+				 &kp C_AC_FORWARD &kp RC(F4)    &mmv MOVE_LEFT  &mkp MCLK      &mmv MOVE_RIGHT &kp RC(INSERT)                &mmv MOVE_LEFT          &kp LG(ENTER)  &kp LEFT      &kp LS(INSERT) &kp RIGHT     &kp RC(TAB)     &kp LA(TAB)
+			// ├────────────────┼─────────────┼───────────────┼──────────────┼───────────────┼──────────────┤              ├───────────────┤       ├──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────┤
+				 &___             &kp LG(LS(C)) &msc SCRL_RIGHT &mmv MOVE_DOWN &msc SCRL_DOWN  &trans                        &mmv MOVE_RIGHT         &kp LG(J)      &kp END       &kp DOWN       &kp PG_DN     &kp RC(PG_DN)   &___
+			// ╰┬─────────────┬─┴─────────────┼───────────────┼──────────────┼───────────────┼──────────────┼───────────╮  ┼──────────╮╭───┴───────┼──────────────┼─────────────┼──────────────┼─────────────┼───────────────┼─────────────╯
+				  &kp C_MUTE                    &mkp RCLK       &mkp LCLK      &mkp RCLK       &mkp LCLK      &kp TAB        &mkp LCLK   &kp ESCAPE  &mkp LCLK      &mkp RCLK        &kp INSERT     &kp DELETE
+			//  ╰──────────╯                  ╰───────────────┴──────────────┴───────────────┴──────────────┴───────────╯  ╰──────────╯╰───────────┴──────────────┴─────────────┴──────────────┴─────────────╯
+			//  ENCODER PRESS                                                                                              HAT PRESS
+			>;
+			//display-name = "L1";
+			display-name = "NAV";
+			sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+		};
 
 
-/* + _Symb Layer2: Simbolos / Tmux: (rojo) Pendientes:
-.-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
-| Qwer  | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom|
-|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-|       |        |        |  é     |        |        |                               |        |   ú    | í      | ó      |TmuxPrev|TmuxLstPne|
-|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-| á     |        |        |        |        |        |                               |        |        |        |        |        |        |
-|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-|       |        |        |        |        |        |                               |        |        |        |        |TmuxNext|        |
-'-------'--------+--------+--------+--------'--------'                               '--------'--------+--------+--------+--------'--------'
-|                |        |        |.--------.--------.--------.           .--------.--------.--------.|        |        |
-|                |        |        ||        |        |        |           |        |        |        ||        |        |
-|                '--------'--------'|        |        |        |           |        |        |        |'--------'--------'
-|                                   '--------'--------'--------'           '--------'--------'--------' */
-// Layer2 Simbolos
-        layer_2 {
-            bindings = <
-
-// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬───────────╮            ╭───────────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────┬─────────────────╮
-    &trans    &trans       &trans         &trans       &trans        &trans                   &trans              &trans      &trans      &trans      &trans      &trans      &trans
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
-    &___      &___         &___           &e_a         &___          &___                     &___                &___        &u_a        &i_a        &o_a        &trans      &trans
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
-    &a_a      &kp LS(N1)   &kp LS(N2)     &kp LS(N3)   &kp LS(N4)    &kp LS(N5)               &___                &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &kp DOUBLE_QUOTES
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
-    &kp TILDE &___         &___           &___         &___          &___                     &___                &enie		   &___        &___        &___        &trans      &kp PIPE
-// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┼────────╮   ┼──────────╮╭───┴───┼───────────┼───────────┼───────────┼───────────┼───────────┴─────────────────╯
-     &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE   &kp TAB      &___        &kp ESC &kp SPACE   &kp ENTER   &kp UNDER   &kp PLUS
-//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴───────────┴────────╯   ╰──────────╯╰───────┴───────────┴───────────┴───────────┴───────────╯
-//  ENCODER PRESS                                                                                  HAT PRESS
-            >;
-
-            //display-name = "L2";
-            display-name = "SYMB";
-            sensor-bindings = <&scroll_encoder>;
-        };
+		// Layer2 Simbolos
+		layer_2 {
+			bindings = <
+			/* + _Symb Layer2: Simbolos / Tmux: (rojo) Pendientes:
+			.-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
+			| Qwer  | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom|
+			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+			|       |        |        |  é     |        |        |                               |        |   ú    | í      | ó      |TmuxPrev|TmuxLstPne|
+			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+			| á     |        |        |        |        |        |                               |        |        |        |        |        |        |
+			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
+			|       |        |        |        |        |        |                               |        |        |        |        |TmuxNext|        |
+			'-------'--------+--------+--------+--------'--------'                               '--------'--------+--------+--------+--------'--------'
+			|                |        |        |.--------.--------.--------.           .--------.--------.--------.|        |        |
+			|                |        |        ||        |        |        |           |        |        |        ||        |        |
+			|                '--------'--------'|        |        |        |           |        |        |        |'--------'--------'
+			|                                   '--------'--------'--------'           '--------'--------'--------' */
+			// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬───────────╮            ╭───────────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────┬─────────────────╮
+				 &trans    &trans       &trans         &trans       &trans        &trans                   &trans              &trans      &trans      &trans      &trans      &trans      &trans
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
+				 &___      &___         &___           &e_a         &___          &___                     &___                &___        &u_a        &i_a        &o_a        &trans      &trans
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
+				 &a_a      &kp LS(N1)   &kp LS(N2)     &kp LS(N3)   &kp LS(N4)    &kp LS(N5)               &___                &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &kp DOUBLE_QUOTES
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
+				 &kp TILDE &___         &___           &___         &___          &___                     &___                &enie			&___        &___        &___        &trans      &kp PIPE
+			// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┼────────╮   ┼──────────╮╭───┴───┼───────────┼───────────┼───────────┼───────────┼───────────┴─────────────────╯
+				  &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE   &kp TAB      &___        &kp ESC &kp SPACE   &kp ENTER   &kp UNDER   &kp PLUS
+			//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴───────────┴────────╯   ╰──────────╯╰───────┴───────────┴───────────┴───────────┴───────────╯
+			//  ENCODER PRESS                                                                                  HAT PRESS
+			>;
+			display-name = "SYMB";
+			sensor-bindings = <&scroll_encoder>;
+		};
 
 
-/* + Layer: Appl Shortcuts Vim / Numeric Pad (celeste)
-.----------.----------.----------.----------.----------.----------.                           .----------.----------.----------.----------.----------.----------.
-|          | VimBuf1  | VimBuf2  | VimBuf3  | VimBuf4  | VimBuf5  |                           | VimBuf6  | VimBuf7  | VimBuf8  | VimBuf9  | VimListBf|          |
-|          |          |          |          |          |          |                           |          |          |          |          | <c-l>    |          |
-|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-| ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | VimPrev  |          |
-| ExpandTab| Esc :q!  | Esc :up  |          |          |          |                           |          |          |          |          |          |          |
-|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-|ReadlineVi|          |          |          | Offi Vim | Offi WBrw|                           | ViList   |          |          |          | ViCln    |          |
-|Screenrc  |          |          |          |          |          |                           | :set list|          |          |          | Esc :    |          |
-|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-| SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | VimNext  |          |
-| set -o vi|          | Esc :x!  |          |          |          |                           | Esc :noh |          |          |          |          |          |
-'----------'----------+----------+----------+----------'----------'                           '----------'----------+----------+----------+----------'----------'
-|                     |          |          |.----------.----------.---------.     .---------.----------.----------.|          |          |
-|                     |          |          ||          |          |         |     |         |          |          ||          |          |
-|                     '----------'----------'|          |          |         |     |         |          |          |'----------'----------'
-|                                            '----------'----------'---------'     '---------'----------'----------' */
-// Layer3 NumPad vim
-        layer_3 {
-            bindings = <
-// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬─────────╮            ╭───────────────╮   ╭─────────┬─────────┬─────────┬─────────┬───────────┬───────────────╮
-    &___      &trans       &trans         &trans       &trans        &trans                 &___                &trans    &trans    &trans    &trans    &trans      &kp C_VOL_UP
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-    &trans    &trans       &trans         &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &trans      &kp C_VOL_DN
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-    &trans    &___         &___           &___         &trans        &trans                 &___                &trans    &kp N4    &kp N5    &kp N6    &trans      &kp C_MUTE
-// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-    &trans    &___         &trans         &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &trans      &kp F20	//XF86AudioMicMute
-// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┼────────╮   ┼──────────╮╭───┴───┼─────────┼─────────┼─────────┼─────────┼───────────┴───────────────╯
-     &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE &kp TAB      &___        &kp ESC &kp SPACE &kp ENTER &kp N0    &kp DOT
-//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴─────────┴────────╯   ╰──────────╯╰───────┴─────────┴─────────┴─────────┴─────────╯
-//  ENCODER PRESS                                                                                  HAT PRESS
-            >;
+		// Layer3 NumPad vim
+		layer_3 {
+			bindings = <
+			/* + Layer: Appl Shortcuts Vim / Numeric Pad (celeste)
+			.----------.----------.----------.----------.----------.----------.                           .----------.----------.----------.----------.----------.----------.
+			|          | VimBuf1  | VimBuf2  | VimBuf3  | VimBuf4  | VimBuf5  |                           | VimBuf6  | VimBuf7  | VimBuf8  | VimBuf9  | VimListBf|          |
+			|          |          |          |          |          |          |                           |          |          |          |          | <c-l>    |          |
+			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+			| ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | VimPrev  |          |
+			| ExpandTab| Esc :q!  | Esc :up  |          |          |          |                           |          |          |          |          |          |          |
+			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+			|ReadlineVi|          |          |          | Offi Vim | Offi WBrw|                           | ViList   |          |          |          | ViCln    |          |
+			|Screenrc  |          |          |          |          |          |                           | :set list|          |          |          | Esc :    |          |
+			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
+			| SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | VimNext  |          |
+			| set -o vi|          | Esc :x!  |          |          |          |                           | Esc :noh |          |          |          |          |          |
+			'----------'----------+----------+----------+----------'----------'                           '----------'----------+----------+----------+----------'----------'
+			|                     |          |          |.----------.----------.---------.     .---------.----------.----------.|          |          |
+			|                     |          |          ||          |          |         |     |         |          |          ||          |          |
+			|                     '----------'----------'|          |          |         |     |         |          |          |'----------'----------'
+			|                                            '----------'----------'---------'     '---------'----------'----------' */
+			// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬─────────╮            ╭───────────────╮   ╭─────────┬─────────┬─────────┬─────────┬───────────┬───────────────╮
+				 &___      &trans       &trans         &trans       &trans        &trans                 &___                &trans    &trans    &trans    &trans    &trans      &kp C_VOL_UP
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
+				 &trans    &trans       &trans         &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &trans      &kp C_VOL_DN
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
+				 &trans    &___         &___           &___         &trans        &trans                 &___                &trans    &kp N4    &kp N5    &kp N6    &trans      &kp C_MUTE
+			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
+				 &trans    &___         &trans         &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &trans      &kp F20	//XF86AudioMicMute
+			// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┼────────╮   ┼──────────╮╭───┴───┼─────────┼─────────┼─────────┼─────────┼───────────┴───────────────╯
+				  &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE &kp TAB      &___        &kp ESC &kp SPACE &kp ENTER &kp N0    &kp DOT
+			//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴─────────┴────────╯   ╰──────────╯╰───────┴─────────┴─────────┴─────────┴─────────╯
+			//  ENCODER PRESS                                                                                  HAT PRESS
+			>;
+			display-name = "NUMB";
+			sensor-bindings = <&scroll_encoder>;
+		};
 
-            //display-name = "L3";
-            display-name = "NUMB";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-
-/* 
-.-----------.-----------.-----------.-----------.-----------.-----------.                                  .-----------.-----------.-----------.-----------.-----------.-----------.
-| BT_Clear  | BT_1      | BT_2      | BT_3      | BT_4      | BT_5      |                                  |           |           |           |           |           | BT Mngr   |
-|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-|           | Sleep     | ScrLock   |           | Moni BrDn | Moni BrUp |                                  | RgbTogle  |RgbBriUp   |           |           | Print Scr | NMEditor  |
-|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-| SoftOff   | OutUSB    | OutBle    |           | Note BrDn | Note BrUp |                                  | RgbEfectUp|RgbBriDn   |           |           | Print Wind| guvcview  |
-|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-| SysReset  |BT_Clear_All |         |           |           | RloadHkey | BootLoader|                                  | RgbEfectDn|RgbSPI     |           |           |           | Audio Ctrl|
-'-----------'-----------+-----------+-----------+-----------'-----------'                                  '-----------'-----------+-----------+-----------+-----------'-----------'
-|                       |           |           |.------------------------------------.      .------------.-----------------------.| Windows   | Linux     | Windows/Linux Mode, para cambiar el set de linux a windows.
-|                       |           |           || Nav       | Symb      | NumPad     |      | NumPad     | Symb      | Nav       ||           |           |
-|                       '-----------'-----------'|           |           |            |      |            |           |           |'-----------'-----------'
-|                                                '-----------'-----------'------------'      '------------'-----------'-----------'
-*/
-//   Setup Layer
-        layer_4 {
-            bindings = <
-// ╭──────────────┬──────────────┬──────────────┬────────────┬────────────┬────────────╮                 ╭───────────────╮  ╭───────────────┬───────────────┬──────────┬──────────┬───────────┬──────────╮
-    &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &___               &___            &___            &___       &___       &___        &trans
-// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
-    &___           &trans         &trans         &___         &trans       &trans                         &___               &rgb_ug RGB_TOG &rgb_ug RGB_BRI &___       &___       &trans      &trans
-// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
-    &soft_off      &out OUT_USB   &out OUT_BLE   &___         &trans       &trans                         &___               &rgb_ug RGB_EFF &rgb_ug RGB_BRD &___       &___       &trans      &trans
-// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
-    &sys_reset     &bt BT_CLR_ALL &___           &___         &trans       &bootloader                    &___               &rgb_ug RGB_EFR &rgb_ug RGB_SPI &___       &___       &___        &trans
-// ╰┬─────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┼─────────────╮   ┼──────────╮╭───┴──┼───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┼
-     &trans                       &___           &___         &trans       &trans       &trans            &___        &trans &trans          &trans          &trans     &trans
-//  ╰────────╯                   ╰──────────────┴────────────┴────────────┴────────────┴─────────────╯   ╰──────────╯╰──────┴───────────────┴───────────────┴──────────┴──────────╯
-//  ENCODER PRESS                                                                                       HAT PRESS
-            >;
-            display-name = "SET";
-            sensor-bindings = <&scroll_encoder>;
-        };
-    };
+		// Setup Layer
+		layer_4 {
+			bindings = <
+			/*
+			.-----------.-----------.-----------.-----------.-----------.-----------.                                  .-----------.-----------.-----------.-----------.-----------.-----------.
+			| BT_Clear  | BT_1      | BT_2      | BT_3      | BT_4      | BT_5      |                                  |           |           |           |           |           | BT Mngr   |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+			|           | Sleep     | ScrLock   |           | Moni BrDn | Moni BrUp |                                  | RgbTogle  |RgbBriUp   |           |           | Print Scr | NMEditor  |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+			| SoftOff   | OutUSB    | OutBle    |           | Note BrDn | Note BrUp |                                  | RgbEfectUp|RgbBriDn   |           |           | Print Wind| guvcview  |
+			|-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
+			| SysReset  |BT_Clear_All |         |           |           | RloadHkey | BootLoader|                                  | RgbEfectDn|RgbSPI     |           |           |           | Audio Ctrl|
+			'-----------'-----------+-----------+-----------+-----------'-----------'                                  '-----------'-----------+-----------+-----------+-----------'-----------'
+			|                       |           |           |.------------------------------------.      .------------.-----------------------.| Windows   | Linux     | Windows/Linux Mode, para cambiar el set de linux a windows.
+			|                       |           |           || Nav       | Symb      | NumPad     |      | NumPad     | Symb      | Nav       ||           |           |
+			|                       '-----------'-----------'|           |           |            |      |            |           |           |'-----------'-----------'
+			|                                                '-----------'-----------'------------'      '------------'-----------'-----------' */
+			// ╭──────────────┬──────────────┬──────────────┬────────────┬────────────┬────────────╮                 ╭───────────────╮  ╭───────────────┬───────────────┬──────────┬──────────┬───────────┬──────────╮
+				 &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &___               &___            &___            &___       &___       &___        &trans
+			// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
+				 &___           &trans         &trans         &___         &trans       &trans                         &___               &rgb_ug RGB_TOG &rgb_ug RGB_BRI &___       &___       &trans      &trans
+			// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
+				 &soft_off      &out OUT_USB   &out OUT_BLE   &___         &trans       &trans                         &___               &rgb_ug RGB_EFF &rgb_ug RGB_BRD &___       &___       &trans      &trans
+			// ├──────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┤                 ├───────────────┤  ├───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┤
+				 &sys_reset     &bt BT_CLR_ALL &___           &___         &trans       &bootloader                    &___               &rgb_ug RGB_EFR &rgb_ug RGB_SPI &___       &___       &___        &trans
+			// ╰┬─────────────┼──────────────┼──────────────┼────────────┼────────────┼────────────┼─────────────╮   ┼──────────╮╭───┴──┼───────────────┼───────────────┼──────────┼──────────┼───────────┼──────────┼
+				  &trans                       &___           &___         &trans       &trans       &trans            &___        &trans &trans          &trans          &trans     &trans
+			//  ╰────────╯                   ╰──────────────┴────────────┴────────────┴────────────┴─────────────╯   ╰──────────╯╰──────┴───────────────┴───────────────┴──────────┴──────────╯
+			//  ENCODER PRESS                                                                                       HAT PRESS
+			>;
+			display-name = "SET";
+			sensor-bindings = <&scroll_encoder>;
+		};
+	};
 };
