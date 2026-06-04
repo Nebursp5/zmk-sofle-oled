@@ -86,12 +86,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - Sft+$$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - {t: K, h: LGUI}
+  - Gui+K
   - HOME
   - $$mdi:arrow-up-bold$$
   - PG UP
-  - {t: PG UP, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: ., h: LGUI, s: '>'}
+  - Ctl+PG UP
+  - {t: Gui+., s: Gui+>}
   - AC FORWARD
   - Ctl+F4
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
@@ -99,11 +99,11 @@ layers:
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - Ctl+Ins
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:keyboard-return$$', h: LGUI}
+  - {t: 'Gui+$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-left-bold$$
   - Sft+Ins
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-control$$'}
+  - Ctl+$$mdi:keyboard-tab$$
   - Alt+$$mdi:keyboard-tab$$
   - {t: '$$mdi:transfer$$', type: trans}
   - Gui+Sft+C
@@ -112,11 +112,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: J, h: LGUI}
+  - Gui+J
   - END
   - $$mdi:arrow-down-bold$$
   - PG DN
-  - {t: PG DN, h: '$$mdi:apple-keyboard-control$$'}
+  - Ctl+PG DN
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - $$mdi:mouse-right-click-outline$$
