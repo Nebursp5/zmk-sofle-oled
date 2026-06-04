@@ -303,7 +303,7 @@ _______,       LGUI(LSFT(KC_C)), KC_WH_R,    KC_MS_D,    KC_WH_D,    KC_APP,    
             >;
 
             //display-name = "L1";
-            display-name = "NAVE";
+            display-name = "NAV";
 // Backup:  sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -392,11 +392,11 @@ _______,       LGUI(LSFT(KC_C)), KC_WH_R,    KC_MS_D,    KC_WH_D,    KC_APP,    
 .-----------.-----------.-----------.-----------.-----------.-----------.                                  .-----------.-----------.-----------.-----------.-----------.-----------.
 | BT_Clear  | BT_1      | BT_2      | BT_3      | BT_4      | BT_5      |                                  |           |           |           |           |           | BT Mngr   |
 |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-| SysReset  | Sleep     | ScrLock   |           | Moni BrDn | Moni BrUp |                                  | RgbTogle  |RgbBRI     |           |           | Print Scr | NMEditor  |
+| SysReset  | Sleep     | ScrLock   |           | Moni BrDn | Moni BrUp |                                  | RgbTogle  |RgbBriUp   |           |           | Print Scr | NMEditor  |
 |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-| SoftOff   | OutUSB    | OutBle    |           | Note BrDn | Note BrUp |                                  | RgbEFF    |RgbBRD     |           |           | Print Wind| guvcview  |
+| SoftOff   | OutUSB    | OutBle    |           | Note BrDn | Note BrUp |                                  | RgbEfectUp|RgbBriDn   |           |           | Print Wind| guvcview  |
 |-----------+-----------+-----------+-----------+-----------+-----------|                                  |-----------+-----------+-----------+-----------+-----------+-----------|
-| BT_Clear_All |        |           |           | RloadHkey | BootLoader|                                  | RgbEFR    |RgbSPI     |           |           |           | Audio Ctrl|
+| BT_Clear_All |        |           |           | RloadHkey | BootLoader|                                  | RgbEfectDn|RgbSPI     |           |           |           | Audio Ctrl|
 '-----------'-----------+-----------+-----------+-----------'-----------'                                  '-----------'-----------+-----------+-----------+-----------'-----------'
 |                       |           |           |.------------------------------------.      .------------.-----------------------.| Windows   | Linux     | Windows/Linux Mode, para cambiar el set de linux a windows.
 |                       |           |           || Nav       | Symb      | NumPad     |      | NumPad     | Symb      | Nav       ||           |           |
