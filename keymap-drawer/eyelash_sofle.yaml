@@ -56,16 +56,16 @@ layers:
   - $$mdi:volume-off$$
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - {t: '$$mdi:backspace$$', h: NAVE}
+  - {t: '$$mdi:backspace$$', h: NAV}
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - {t: '$$mdi:keyboard-tab$$', h: NUMB}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:keyboard-esc$$', h: NUMB}
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
-  - {t: '$$mdi:keyboard-return$$', h: NAVE}
+  - {t: '$$mdi:keyboard-return$$', h: NAV}
   - {t: '-', s: _}
   - {t: '=', s: +}
-  NAVE:
+  NAV:
   - {t: '`', s: '~'}
   - {t: Gui+1, s: Gui+!}
   - {t: Gui+2, s: Gui+@}
