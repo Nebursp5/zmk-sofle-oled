@@ -87,6 +87,227 @@
 	};
 
 	macros {
+
+		TmuxW1: TmuxW1 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N1>;
+		};
+		TmuxW2: TmuxW2 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N2>;
+		};
+		TmuxW3: TmuxW3 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N3>;
+		};
+		TmuxW4: TmuxW4 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N4>;
+		};
+		TmuxW5: TmuxW5 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N5>;
+		};
+		TmuxW6: TmuxW6 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N6>;
+		};
+		TmuxW7: TmuxW7 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N7>;
+		};
+		TmuxW8: TmuxW8 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N8>;
+		};
+		TmuxW9: TmuxW9 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N9>;
+		};
+		TmuxLW: TmuxLW {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp LC(LA(A))>,
+		};
+		TmuxZoom: TmuxZoom {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp Z>;
+		};
+		TmuxPrev: TmuxPrev {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp P>;
+		};
+		TmuxNext: TmuxNext {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp N>;
+		};
+		TmuxLstPne: TmuxLstPne {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp SEMI>;
+		};
+		VimBuf1: VimBuf1 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N1>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf2: VimBuf2 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N2>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf3: VimBuf3 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N3>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf4: VimBuf4 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N4>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf5: VimBuf5 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N5>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf6: VimBuf6 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N6>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf7: VimBuf7 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N7>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf8: VimBuf8 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N8>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf9: VimBuf9 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N9>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimBuf1: VimBuf1 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N1>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimPrev: VimPrev {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp P>,
+				<&macro_tap &kp ENTER>;
+		};
+		VimNext: VimNext {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N>,
+				<&macro_tap &kp ENTER>;
+		};
+
+
 		enie: enie {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -252,7 +473,7 @@
 			|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
 			|           |           |           |           |           |           |                          |           |           |           |           |           |           |
 			|-----------+-----------+-----------+-----------+-----------+-----------|                          |-----------+-----------+-----------+-----------+-----------+-----------|
-			|           |           |           |           |           | Menu KC_app|                          |           |           |           |           |           |           |
+			|           |           |           |           |           | Menu KC_app|ya deberia estar          |           |           |           |           |           |           |
 			'-----------'-----------+-----------+-----------+-----------'-----------'                          '-----------'-----------+-----------+-----------+-----------'-----------'
 			|                       |           |           |.-----------.-----------.--------.      .--------.-----------.-----------.|           |           |
 			|                       |           |           ||           |           |        |      |        |           |           ||           |           |
@@ -283,26 +504,26 @@
 			bindings = <
 			/* + _Symb Layer2: Simbolos / Tmux: (rojo) Pendientes:
 			.-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
-			| Qwer  | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom|
+			|       | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom| ya deberian estar.
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-			|       |        |        |  é     |        |        |                               |        |   ú    | í      | ó      |TmuxPrev|TmuxLstPne|
+			|       |        |        |        |        |        |                               |        |        |        |        |TmuxPrev|TmuxLstPne| ya deberia estar.
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-			| á     |        |        |        |        |        |                               |        |        |        |        |        |        |
+			|       |        |        |        |        |        |                               |        |        |        |        |        |        |
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-			|       |        |        |        |        |        |                               |        |        |        |        |TmuxNext|        |
+			|       |        |        |        |        |        |                               |        |        |        |        |TmuxNext|        | ya deberia estar.
 			'-------'--------+--------+--------+--------'--------'                               '--------'--------+--------+--------+--------'--------'
 			|                |        |        |.--------.--------.--------.           .--------.--------.--------.|        |        |
 			|                |        |        ||        |        |        |           |        |        |        ||        |        |
 			|                '--------'--------'|        |        |        |           |        |        |        |'--------'--------'
 			|                                   '--------'--------'--------'           '--------'--------'--------' */
 			// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬───────────╮            ╭───────────────╮   ╭───────────┬───────────┬───────────┬───────────┬───────────┬─────────────────╮
-				 &trans    &trans       &trans         &trans       &trans        &trans                   &trans              &trans      &trans      &trans      &trans      &trans      &trans
+			    &___      &TmuxW1      &TmuxW2        &TmuxW3      &TmuxW4       &TmuxW5                  &trans              &TmuxW6     &TmuxW7     &TmuxW8     &TmuxW9     &TmuxLW     &TmuxZoom
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
-				 &___      &___         &___           &e_a         &___          &___                     &___                &___        &u_a        &i_a        &o_a        &trans      &trans
+				 &___      &___         &___           &e_a         &___          &___                     &___                &___        &u_a        &i_a        &o_a        &TmuxPrev   &TmuxLstPne
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
 				 &a_a      &kp LS(N1)   &kp LS(N2)     &kp LS(N3)   &kp LS(N4)    &kp LS(N5)               &___                &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &kp DOUBLE_QUOTES
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┤            ├───────────────┤   ├───────────┼───────────┼───────────┼───────────┼───────────┼─────────────────┤
-				 &kp TILDE &___         &___           &___         &___          &___                     &___                &enie			&___        &___        &___        &trans      &kp PIPE
+				 &kp TILDE &___         &___           &___         &___          &___                     &___                &enie			&___        &___        &___        &TmuxNext      &kp PIPE
 			// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼───────────┼────────╮   ┼──────────╮╭───┴───┼───────────┼───────────┼───────────┼───────────┼───────────┴─────────────────╯
 				  &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE   &kp TAB      &___        &kp ESC &kp SPACE   &kp ENTER   &kp UNDER   &kp PLUS
 			//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴───────────┴────────╯   ╰──────────╯╰───────┴───────────┴───────────┴───────────┴───────────╯
@@ -318,16 +539,16 @@
 			bindings = <
 			/* + Layer: Appl Shortcuts Vim / Numeric Pad (celeste)
 			.----------.----------.----------.----------.----------.----------.                           .----------.----------.----------.----------.----------.----------.
-			|          | VimBuf1  | VimBuf2  | VimBuf3  | VimBuf4  | VimBuf5  |                           | VimBuf6  | VimBuf7  | VimBuf8  | VimBuf9  | VimListBf|          |
+			|          | +VimBuf1 | +VimBuf2 | +VimBuf3 | +VimBuf4 | +VimBuf5 |                           | +VimBuf6 | +VimBuf7 | +VimBuf8 | +VimBuf9 | VimListBf|          |
 			|          |          |          |          |          |          |                           |          |          |          |          | <c-l>    |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-			| ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | VimPrev  |          |
+			| ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | +VimPrev |          |
 			| ExpandTab| Esc :q!  | Esc :up  |          |          |          |                           |          |          |          |          |          |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
 			|ReadlineVi|          |          |          | Offi Vim | Offi WBrw|                           | ViList   |          |          |          | ViCln    |          |
 			|Screenrc  |          |          |          |          |          |                           | :set list|          |          |          | Esc :    |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-			| SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | VimNext  |          |
+			| SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | +VimNext |          |
 			| set -o vi|          | Esc :x!  |          |          |          |                           | Esc :noh |          |          |          |          |          |
 			'----------'----------+----------+----------+----------'----------'                           '----------'----------+----------+----------+----------'----------'
 			|                     |          |          |.----------.----------.---------.     .---------.----------.----------.|          |          |
@@ -335,13 +556,13 @@
 			|                     '----------'----------'|          |          |         |     |         |          |          |'----------'----------'
 			|                                            '----------'----------'---------'     '---------'----------'----------' */
 			// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬─────────╮            ╭───────────────╮   ╭─────────┬─────────┬─────────┬─────────┬───────────┬───────────────╮
-				 &___      &trans       &trans         &trans       &trans        &trans                 &___                &trans    &trans    &trans    &trans    &trans      &kp C_VOL_UP
+				 &___      &VimBuf1     &VimBuf2       &VimBuf3     &VimBuf4      &VimBuf5               &___                &VimBuf6  &VimBuf7  &VimBuf8  &VimBuf9  &trans      &kp C_VOL_UP
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-				 &trans    &trans       &trans         &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &trans      &kp C_VOL_DN
+				 &trans    &trans       &trans         &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &VimPrev    &kp C_VOL_DN
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
 				 &trans    &___         &___           &___         &trans        &trans                 &___                &trans    &kp N4    &kp N5    &kp N6    &trans      &kp C_MUTE
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-				 &trans    &___         &trans         &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &trans      &kp F20	//XF86AudioMicMute
+				 &trans    &___         &trans         &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &VimNext    &kp F20	//XF86AudioMicMute
 			// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┼────────╮   ┼──────────╮╭───┴───┼─────────┼─────────┼─────────┼─────────┼───────────┴───────────────╯
 				  &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE &kp TAB      &___        &kp ESC &kp SPACE &kp ENTER &kp N0    &kp DOT
 			//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴─────────┴────────╯   ╰──────────╯╰───────┴─────────┴─────────┴─────────┴─────────╯
