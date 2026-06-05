@@ -156,7 +156,7 @@
 			#binding-cells = <0>;
 			bindings =
 				<&macro_tap &kp LC(LA(A))>,
-				<&macro_tap &kp LC(LA(A))>,
+				<&macro_tap &kp LC(LA(A))>;
 		};
 		TmuxZoom: TmuxZoom {
 			compatible = "zmk,behavior-macro";
