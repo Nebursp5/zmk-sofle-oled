@@ -276,6 +276,16 @@
 				<&macro_tap &kp N9>,
 				<&macro_tap &kp ENTER>;
 		};
+		VimBuf1: VimBuf1 {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp B>,
+				<&macro_tap &kp N1>,
+				<&macro_tap &kp ENTER>;
+		};
 		VimPrev: VimPrev {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -297,6 +307,40 @@
 				<&macro_tap &kp ENTER>;
 		};
 
+		ViWrite: ViWrite {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp U>,
+				<&macro_tap &kp P>,
+				<&macro_tap &kp ENTER>;
+		};
+		ViExit: ViExit {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp Q>,
+				<&macro_tap &kp EXCLAMATION>,
+				<&macro_tap &kp ENTER>;
+		};
+
+		ViWrExit: ViWrExit {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_tap &kp ESC>,
+				<&macro_tap &kp COLON>,
+				<&macro_tap &kp W>,
+				<&macro_tap &kp Q>,
+				<&macro_tap &kp EXCLAMATION>,
+				<&macro_tap &kp ENTER>;
+		};
+
+  
 
 		enie: enie {
 			compatible = "zmk,behavior-macro";
@@ -417,15 +461,15 @@
 			/* Pendientes Layer0:
 			.--------.--------.--------.--------.--------.--------.                                    .--------.--------.--------.---------.--------.--------.
 			| Vim_5  |        |        |        |        |        |                                    |        |        |        |         |        | F11    |
-			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFull | este ya deberia estar.
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFull | Este ya deberia estar.
 			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-			|        |        |        |        |        |        |                                    |        |        |        |         |        | Del    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        | Del    | Este ya deberia estar.
 			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmTiled|
 			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
 			|        |        |        |        |        |        |                                    |        |        |        |         |        | ' "    |
-			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFloat|
+			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmFloat| Ya deberia estar.
 			|--------+--------+--------+--------+--------+--------|                                    |--------+--------+--------+---------+--------+--------|
-			|        |        |        |        |        |        |                                    |        |        |        |         |        | \ |    |
+			|        |        |        |        |        |        |                                    |        |        |        |         |        | \ |    |este ya deberia estar.
 			|        |        |        |        |        |        |                                    |        |        |        |         |        |dwmgap  |
 			'--------'--------+--------+--------+--------'--------'                                    '--------'--------+--------+---------+--------'--------'
 			|                 |        |        |.--------.--------.--------.                .--------.--------.--------.|        |         |
@@ -438,7 +482,7 @@
 			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼─────────────────┤
 				 &mo 4     &kp Q        &kp W            &kp E             &kp R           &kp T                     &msc SCRL_DOWN          &kp Y       &kp U       &kp I      &kp O       &kp P           &ht LG(T) DELETE
 			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼─────────────────┤
-				 &kp CAPS  &hm LSHIFT A &hm LCTRL S      &hm LALT D        &hm LGUI F      &kp G                     &msc SCRL_LEFT          &kp H       &hm RGUI J  &hm RALT K &hm RCTRL L &hm RSHIFT SEMI &ht LG(T) APOS
+				 &kp CAPS  &hm LSHIFT A &hm LCTRL S      &hm LALT D        &hm LGUI F      &kp G                     &msc SCRL_LEFT          &kp H       &hm RGUI J  &hm RALT K &hm RCTRL L &hm RSHIFT SEMI &ht LG(F) APOS
 			// ├─────────┼────────────┼────────────────┼─────────────────┼───────────────┼───────────┤             ├───────────────┤       ├───────────┼───────────┼──────────┼───────────┼───────────────┼─────────────────┤
 				 &kp GRAVE &kp Z        &kp X            &kp C             &kp V           &kp B                     &msc SCRL_RIGHT         &kp N       &kp M       &kp COMMA  &kp DOT     &kp FSLH        &ht LG(APOS) BSLH
 			// ╰┬────────┴─┬──────────┼────────────────┼─────────────────┼───────────────┼───────────┼─────────╮   ┼──────────╮╭───────────┼───────────┼───────────┼──────────┼───────────┼───────────────┼─────────────────╯
@@ -494,13 +538,13 @@
 			bindings = <
 			/* + _Symb Layer2: Simbolos / Tmux: (rojo) Pendientes:
 			.-------.--------.--------.--------.--------.--------.                               .--------.--------.--------.--------.--------.--------.
-			|       | TmuxW1 | TmuxW2 | TmuxW3 | TmuxW4 | TmuxW5 |                               | TmuxW6 | TmuxW7 | TmuxW8 | TmuxW9 | TmuxLW |TmuxZoom| ya deberian estar.
+			|       |+TmuxW1 |+TmuxW2 |+TmuxW3 |+TmuxW4 |+TmuxW5 |                               |+TmuxW6 |+TmuxW7 |+TmuxW8 |+TmuxW9 |+TmuxLW |+TmuxZoom| ya deberian estar.
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-			|       |        |        |        |        |        |                               |        |        |        |        |TmuxPrev|TmuxLstPne| ya deberia estar.
+			|       |        |        |        |        |        |                               |        |        |        |        |+TmuxPrev|+TmuxLstPne| ya deberia estar.
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
 			|       |        |        |        |        |        |                               |        |        |        |        |        |        |
 			|-------+--------+--------+--------+--------+--------|                               |--------+--------+--------+--------+--------+--------|
-			|       |        |        |        |        |        |                               |        |        |        |        |TmuxNext|        | ya deberia estar.
+			|       |        |        |        |        |        |                               |        |        |        |        |+TmuxNext|        | ya deberia estar.
 			'-------'--------+--------+--------+--------'--------'                               '--------'--------+--------+--------+--------'--------'
 			|                |        |        |.--------.--------.--------.           .--------.--------.--------.|        |        |
 			|                |        |        ||        |        |        |           |        |        |        ||        |        |
@@ -532,13 +576,13 @@
 			|          | +VimBuf1 | +VimBuf2 | +VimBuf3 | +VimBuf4 | +VimBuf5 |                           | +VimBuf6 | +VimBuf7 | +VimBuf8 | +VimBuf9 | VimListBf|          |
 			|          |          |          |          |          |          |                           |          |          |          |          | <c-l>    |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-			| ViTabSpc | ViExit   | ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | +VimPrev |          |
+			| ViTabSpc |-ViExit   |-ViWrite  |          | Virt App | Terminal |                           | Calc     |          |          |          | +VimPrev |          |
 			| ExpandTab| Esc :q!  | Esc :up  |          |          |          |                           |          |          |          |          |          |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
 			|ReadlineVi|          |          |          | Offi Vim | Offi WBrw|                           | ViList   |          |          |          | ViCln    |          |
 			|Screenrc  |          |          |          |          |          |                           | :set list|          |          |          | Esc :    |          |
 			|----------+----------+----------+----------+----------+----------|                           |----------+----------+----------+----------+----------+----------|
-			| SetOVi   |          | ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | +VimNext |          |
+			| SetOVi   |          |-ViWrExit | ClipPad  | My Vim   | My WBrw  |                           | ViNoH    |          |          |          | +VimNext |          |
 			| set -o vi|          | Esc :x!  |          |          |          |                           | Esc :noh |          |          |          |          |          |
 			'----------'----------+----------+----------+----------'----------'                           '----------'----------+----------+----------+----------'----------'
 			|                     |          |          |.----------.----------.---------.     .---------.----------.----------.|          |          |
@@ -548,11 +592,11 @@
 			// ╭─────────┬────────────┬──────────────┬────────────┬─────────────┬─────────╮            ╭───────────────╮   ╭─────────┬─────────┬─────────┬─────────┬───────────┬───────────────╮
 				 &___      &VimBuf1     &VimBuf2       &VimBuf3     &VimBuf4      &VimBuf5               &___                &VimBuf6  &VimBuf7  &VimBuf8  &VimBuf9  &trans      &kp C_VOL_UP
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-				 &trans    &trans       &trans         &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &VimPrev    &kp C_VOL_DN
+				 &trans    &ViExit       &ViWrite      &___         &trans        &trans                 &___                &trans    &kp N6    &kp N8    &kp N9    &VimPrev    &kp C_VOL_DN
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
 				 &trans    &___         &___           &___         &trans        &trans                 &___                &trans    &kp N4    &kp N5    &kp N6    &trans      &kp C_MUTE
 			// ├─────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┤            ├───────────────┤   ├─────────┼─────────┼─────────┼─────────┼───────────┼───────────────┤
-				 &trans    &___         &trans         &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &VimNext    &kp F20	//XF86AudioMicMute
+				 &trans    &___         &ViWrExit      &trans       &trans        &trans                 &___                &trans    &kp N1    &kp N2    &kp N3    &VimNext    &kp F20	//XF86AudioMicMute
 			// ╰┬────────┼────────────┼──────────────┼────────────┼─────────────┼─────────┼────────╮   ┼──────────╮╭───┴───┼─────────┼─────────┼─────────┼─────────┼───────────┴───────────────╯
 				  &___                  &kp LBRC       &kp RBRC     &kp BACKSPACE &kp SPACE &kp TAB      &___        &kp ESC &kp SPACE &kp ENTER &kp N0    &kp DOT
 			//  ╰────────╯            ╰──────────────┴────────────┴─────────────┴─────────┴────────╯   ╰──────────╯╰───────┴─────────┴─────────┴─────────┴─────────╯
