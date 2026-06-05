@@ -131,19 +131,19 @@ layers:
   - Ins
   - $$mdi:backspace-reverse-outline$$
   SYMB:
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&TmuxW1'
+  - '&TmuxW2'
+  - '&TmuxW3'
+  - '&TmuxW4'
+  - '&TmuxW5'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&TmuxW6'
+  - '&TmuxW7'
+  - '&TmuxW8'
+  - '&TmuxW9'
+  - '&TmuxLW'
+  - '&TmuxZoom'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -155,8 +155,8 @@ layers:
   - '&u_a'
   - '&i_a'
   - '&o_a'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&TmuxPrev'
+  - '&TmuxLstPne'
   - '&a_a'
   - {t: Sft+1, s: Sft+!}
   - {t: Sft+2, s: Sft+@}
@@ -181,7 +181,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&TmuxNext'
   - '|'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '{'
@@ -197,16 +197,16 @@ layers:
   - +
   NUMB:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&VimBuf1'
+  - '&VimBuf2'
+  - '&VimBuf3'
+  - '&VimBuf4'
+  - '&VimBuf5'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&VimBuf6'
+  - '&VimBuf7'
+  - '&VimBuf8'
+  - '&VimBuf9'
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-high$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -220,7 +220,7 @@ layers:
   - {t: '6', s: ^}
   - {t: '8', s: '*'}
   - {t: '9', s: (}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&VimPrev'
   - $$mdi:volume-low$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -246,7 +246,7 @@ layers:
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&VimNext'
   - F20
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '{'
