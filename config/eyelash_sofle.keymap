@@ -276,16 +276,6 @@
 				<&macro_tap &kp N9>,
 				<&macro_tap &kp ENTER>;
 		};
-		VimBuf1: VimBuf1 {
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings =
-				<&macro_tap &kp ESC>,
-				<&macro_tap &kp COLON>,
-				<&macro_tap &kp B>,
-				<&macro_tap &kp N1>,
-				<&macro_tap &kp ENTER>;
-		};
 		VimPrev: VimPrev {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
