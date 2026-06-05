@@ -13,7 +13,7 @@ layers:
   - {t: '8', h: F8, s: '*'}
   - {t: '9', h: F9, s: (}
   - {t: '0', h: F10, s: )}
-  - F11
+  - {t: F11, h: Gui+M}
   - SET
   - Q
   - W
@@ -26,7 +26,7 @@ layers:
   - I
   - O
   - P
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:backspace-reverse-outline$$', h: Gui+T}
   - $$mdi:apple-keyboard-caps$$
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
@@ -39,7 +39,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
-  - {t: '''', s: '"'}
+  - {t: '''', h: Gui+T, s: '"'}
   - {t: '`', s: '~'}
   - Z
   - X
@@ -52,7 +52,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: \, s: '|'}
+  - {t: \, h: Gui+', s: '|'}
   - $$mdi:volume-off$$
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
