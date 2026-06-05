@@ -110,7 +110,7 @@ layers:
   - $$mdi:pan-right$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:pan-down$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - CONTEXT MENU
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - Gui+J
   - END
