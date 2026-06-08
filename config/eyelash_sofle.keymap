@@ -83,7 +83,6 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&kp>;
 		};
-
 	};
 
 	macros {
@@ -296,7 +295,6 @@
 				<&macro_tap &kp N>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		ViWrite: ViWrite {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -317,7 +315,6 @@
 				<&macro_tap &kp EXCLAMATION>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		ViWrExit: ViWrExit {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -329,9 +326,6 @@
 				<&macro_tap &kp EXCLAMATION>,
 				<&macro_tap &kp ENTER>;
 		};
-
-  
-
 		enie: enie {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -349,7 +343,6 @@
 				<&macro_tap &kp N1>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		a_a: a_a {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -367,7 +360,6 @@
 				<&macro_tap &kp N1>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		e_a: e_a {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -385,7 +377,6 @@
 				<&macro_tap &kp N9>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		i_a: i_a {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -403,7 +394,6 @@
 				<&macro_tap &kp D>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		o_a: o_a {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -421,7 +411,6 @@
 				<&macro_tap &kp N3>,
 				<&macro_tap &kp ENTER>;
 		};
-
 		u_a: u_a {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -484,7 +473,6 @@
 			//display-name = "L0";
 			display-name = "BASE";
 		};
-
 
 		// Navigation Layer1:
 		layer_1 {
